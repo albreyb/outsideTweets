@@ -2,6 +2,10 @@ var http = require('http');
 
 var Artist = require('./artists.js');
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6a6ab74340b95a76f5040ba9ebe410795faade29
 var processArtist = function (data) {
   Artist.findOne({ 'artist' : data.artist } , function (err, found) {
     if (err) {

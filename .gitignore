@@ -1,7 +1,11 @@
 /secrets.js
 /secrets.txt
 <<<<<<< HEAD
+<<<<<<< HEAD
 /node_modules
 =======
 node_modules
 >>>>>>> 7b0f52ca69d819f6dadd2922365892f7ee2f0fcd
+=======
+/node_modules
+>>>>>>> 6a6ab74340b95a76f5040ba9ebe410795faade29

@@ -11,6 +11,11 @@ var access_token_secret = require('./secrets.js').access_token_secret;
 var port = process.env.port || 3000;
 
 tweetHandler.getMentions();
+var server = app.listen(port, function() {
+  console.log('listening on port 3000');
+});
+ 
+tweetHandler.getMentions();
 
 var server = app.listen(port, function() {
 });
