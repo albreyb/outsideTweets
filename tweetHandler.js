@@ -44,7 +44,6 @@ module.exports = {
 
   replyToMentions: function(currentMention){
     //responseMsg is the string we will send to twitter to tweet for us
-    console.log('reply to messages: ', currentMention);
     wit.getWitForMessage(currentMention, function(witResponse) {
       var responseMsg = '@' + witResponse.message.user + ":";
       if(witResponse.intent === 'greeting'){

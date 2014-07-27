@@ -5,14 +5,15 @@ var keys = require('./secrets.js');
 
 var wit = {
   getWitForMessage: function(message, callback) {
-    var url = 'https://api.wit.ai/message?v=20140726&q=' +
+
+    var url = 'https://api.wit.ai/message?v=20140721&q=' +
               encodeURIComponent(message.text);
 
     var options = {
       url: url,
       headers: {
-        'Authorization': 'Bearer' + process.env.witAuth || keys.witAuth,
-        }
+        'Authorization': 'Bearer' + keys.witAuth,
+      }
     };
 
     request(options, function(error, response, body) {
