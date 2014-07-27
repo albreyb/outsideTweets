@@ -2,7 +2,6 @@ var twit = require('twit');
 
 var wit = require('./wit.js');
 var keys = require('./secrets.js');
-var artists = require('./artistParser.js');
 var consumer_key = keys.consumer_key;
 var consumer_secret = keys.consumer_secret;
 var access_token = keys.access_token_key;
@@ -64,7 +63,7 @@ module.exports = {
                 var from = results[i].performs[j].from;
                 var to = results[i].performs[j].to;
                 var stage = results[i].performs[j].stage;
-
+                // var date = new Date(results[i].perfomrs[j].date);
                 responseMsg += 'YO, ' + artist + ' is playing on ' + stage +
                                             ' from ' + from + ' - ' + to;
                 t.post('statuses/update', {status: responseMsg}, function(err){
@@ -72,9 +71,8 @@ module.exports = {
                 });
               }
             }
-          
         });
-      }
+      } 
     });
   }
 };
