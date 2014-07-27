@@ -28,7 +28,8 @@ var processArtist = function (data) {
 
       Artist.create({
         'artist': data.artist,
-        'performs' : performs
+        'performs' : performs,
+        'spotify' : data.ids.spotify
       });
       console.log('created');
     } else {
