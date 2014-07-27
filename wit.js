@@ -20,7 +20,6 @@ encodeURIComponent(message.text);
       if (error) {
         console.log("Error getting Wit: " + error);
       } else {
-        console.log(body);
         body = JSON.parse(body);
         callback({message: message, intent: body["outcomes"][0]["intent"]});
       }

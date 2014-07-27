@@ -1,7 +1,7 @@
 var twit = require('twit');
 var wit = require('./wit.js');
 var keys = require('./secrets.js');
-
+var artists = require('./artistParser.js');
 var consumer_key = keys.consumer_key;
 var consumer_secret = keys.consumer_secret;
 var access_token = keys.access_token_key;
@@ -43,15 +43,18 @@ module.exports = {
   },
 
   replyToMentions: function(currentMention){
-    //responseMsg is the string we will send to twitter to tweet for us
-    wit.getWitForMessage(currentMention, function(witResponse) {
-
-      var responseMsg = '@' + currentMention.screen_name + ": kanye west"; 
+     var stuff = 'hey';
+     if (artists(currentMention.text)) {
+      stuff = artists(currentMention.text);
+    }
       
+    wit.getWitForMessage(currentMention, function(witResponse) {
+      var responseMsg = '@' + currentMention.screen_name + ": " + stuff.artist;
+      console.log(responseMsg);
       if(witResponse.intent === 'artist'){
-        t.post('statuses/update', {status: responseMsg}, function(err){
-          console.log(err);
-        });
+          // t.post('statuses/update', {status: responseMsg}, function(err){
+          //   console.log(err);
+          // });
       }
     });
 
