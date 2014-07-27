@@ -6,7 +6,7 @@ var keys = require('./secrets.js');
 var wit = {
   getWitForMessage: function(message, callback) {
 
-    var url = 'https://api.wit.ai/message?v=20140721&q=' +
+    var url = 'https://api.wit.ai/message?q=' +
               encodeURIComponent(message.text);
 
     var options = {
