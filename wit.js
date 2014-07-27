@@ -1,18 +1,18 @@
 var request = require('request');
-var keys = require('./secrets.js');
-
+var witAuth = require('./secrets.js').wit_auth;
 
 
 var wit = {
   getWitForMessage: function(message, callback) {
 
-    var url = 'https://api.wit.ai/message?q=' +
-              encodeURIComponent(message.text);
+    var url = 'https://api.wit.ai/message?v=20140726&q=' +
+encodeURIComponent(message.text);
 
     var options = {
       url: url,
-      headers: {
-        'Authorization': 'Bearer' + keys.witAuth,
+       headers: {
+        'Authorization': 'Bearer ' + witAuth,
+        'Accept': 'application/vnd.wit.20140620'
       }
     };
 
